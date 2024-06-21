@@ -1,0 +1,118 @@
+* {
+	font-family: "Open Sans", sans-serif;
+}
+
+.currency {
+	position: relative;
+	margin: 50px auto;
+	width: 268px;
+}
+
+.currency__dropdown {
+	position: relative;
+}
+
+.currency__dropdown:after {
+	content: "";
+	position: absolute;
+	margin: 0;
+	width: 16px;
+	height: 17px;
+	top: 15px;
+	right: 10px;
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+
+.currency__dropdown.open:after {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.currency__caption {
+	position: relative;
+	width: 50px;
+	height: 22px;
+	background: #F8F9FB;
+	border-radius: 12px;
+	cursor: pointer;
+	padding: 12.5px 15px 12.5px 60px;
+	font-size: 14px;
+	line-height: 150%;
+	letter-spacing: 0.3px;
+}
+
+.currency__caption__img {
+	width: 25px;
+	height: 16px;
+}
+
+.currency__list {
+	position: absolute;
+	background-color: #fff;
+	width: 100%;
+	border-radius: 12px;
+	-webkit-box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+	box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+	opacity: 0;
+	overflow: hidden;
+	-webkit-transition: all 0.2s ease-in-out, opacity 0.1s linear;
+	transition: all 0.2s ease-in-out, opacity 0.1s linear;
+	-webkit-transform: scale(0.85);
+	transform: scale(0.85);
+	-webkit-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	top: 52px;
+	z-index: -1;
+	visibility: hidden;
+	padding: 10px 0;
+}
+
+.currency__dropdown.open>.currency__list {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+	z-index: 1;
+	visibility: visible;
+}
+
+.currency__dropdown>.currency__list>.currency__item {
+	height: 22px;
+	padding: 10.5px 15px 10.5px 62px;
+	cursor: pointer;
+	-webkit-transition: .3s;
+	transition: .3s;
+	font-size: 14px;
+	line-height: 150%;
+	letter-spacing: 0.3px;
+}
+
+.currency__dropdown>.currency__list>.currency__item.selected {
+	background: rgba(36, 60, 187, 0.2);
+	pointer-events: none;
+}
+
+.currency__dropdown>.currency__list>.currency__item:hover {
+	background: #F8F9FB;
+}
+
+.currency__dropdown>.currency__caption img,
+.currency__dropdown>.currency__list>.currency__item img {
+	position: absolute;
+	margin-top: 2.5px;
+	left: 15px;
+}
+
+.currency__dropdown>.currency__list>.currency__item .caption__value,
+.currency__dropdown>.currency__caption .caption__value {
+	font-weight: 600;
+	font-size: 14px;
+	letter-spacing: 0.3px;
+	color: #243CBB;
+	position: absolute;
+	right: 36px;
+}
+
+.currency__dropdown>.currency__list>.currency__item .caption__value {
+	right: 20px;
+}
